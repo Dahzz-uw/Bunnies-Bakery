@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro - Bunnies Bakery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" type="image/x-icon">
+   <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #d4fff4;
+            background-image: 
+                radial-gradient(#ffb6c1 15%, transparent 16%), 
+                radial-gradient(#ffb6c1 15%, transparent 16%);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+        }
+
+        .layout-wrapper { display: flex; justify-content: center; align-items: center; gap: 40px; width: 100%; max-width: 1200px; padding: 20px; }
+        .side-banner { display: none; }
+
+        @media (min-width: 900px) {
+            .side-banner { display: block; width: 250px; flex-shrink: 0; }
+            .side-banner img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 { color: #333; font-size: 24px; margin-bottom: 5px; }
+        .login-container p { color: #777; font-size: 14px; margin-bottom: 25px; }
+
+        form { display: flex; flex-direction: column; text-align: left; }
+        label { font-size: 14px; color: #555; margin-bottom: 5px; font-weight: 600; }
+        
+        input {
+            padding: 12px 15px; margin-bottom: 15px;
+            border: 2px solid #eee; border-radius: 10px;
+            font-family: 'Poppins', sans-serif; font-size: 14px; outline: none;
+        }
+        input:focus { border-color: #00c2cb; }
+
+        .forgot-password { font-size: 12px; color: #ff91a4; text-decoration: none; text-align: right; margin-top: -5px; margin-bottom: 25px; font-weight: 600; }
+
+        .btn-submit {
+            background-color: #00c2cb; color: white; border: none; padding: 12px;
+            border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer;
+            font-family: 'Poppins', sans-serif; transition: 0.3s;
+        }
+        .btn-submit:hover { background-color: #00a4ac; }
+
+        .toggle-form { margin-top: 20px; font-size: 13px; color: #666; }
+        .toggle-form a { color: #00c2cb; text-decoration: none; font-weight: 600; cursor: pointer; }
+
+        .back-home { display: inline-block; margin-top: 20px; font-size: 14px; color: #555; text-decoration: none; font-weight: 600; }
+        
+        /* Ocultar elementos */
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="layout-wrapper">
+        <div class="side-banner"><img src="banner/BANNER MARLENN 1.png" alt="Banner"></div>
+
+        <div class="login-container">
+            
+            <div id="login-box">
+                <h1>¡Bienvenido!</h1>
+                <p>Ingresa a tu cuenta de Bunnies Bakery</p>
+                <form action="login_process.php" method="POST">
+                    <label for="login-email">Correo Electrónico</label>
+                    <input type="email" id="login-email" name="email" placeholder="ejemplo@correo.com" required>
+
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" name="password" placeholder="********" required>
+
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                </form>
+                <div class="toggle-form">
+                    ¿No tienes una cuenta? <a onclick="cambiarFormulario()">Regístrate aquí</a>
+                </div>
+            </div>
+
+            <div id="register-box" class="hidden">
+                <h1>Crear Cuenta</h1>
+                <p>Únete a Bunnies Bakery y recibe sorpresas</p>
+                <form action="register_process.php" method="POST">
+                    <label for="reg-name">Nombre Completo</label>
+                    <input type="text" id="reg-name" name="username" placeholder="Tu nombre" required>
+
+                    <label for="reg-email">Correo Electrónico</label>
+                    <input type="email" id="reg-email" name="email" placeholder="ejemplo@correo.com" required>
+
+                    <label for="reg-password">Contraseña</label>
+                    <input type="password" id="reg-password" name="password" placeholder="Crea una contraseña" required>
+
+                    <button type="submit" class="btn-submit">Crear Cuenta</button>
+                </form>
+                <div class="toggle-form">
+                    ¿Ya tienes cuenta? <a onclick="cambiarFormulario()">Inicia sesión</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-home">⬅ Regresar al inicio</a>
+        </div>
+
+        <div class="side-banner"><img src="banner/BANNER VICO 1.jpg" alt="Banner"></div>
+    </div>
+
+    <script>
+        function cambiarFormulario() {
+            document.getElementById('login-box').classList.toggle('hidden');
+            document.getElementById('register-box').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

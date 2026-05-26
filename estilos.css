@@ -1,0 +1,527 @@
+    :root {
+    --blanco: #ffffff;             /* Color de fondo del menú (ahora será blanco sólido) */
+    --color-primario: #00bcd4;     /* Color turquesa para el botón de Login y detalles */
+    --color-oscuro: #2b2b2b;       /* Color para el texto del menú */
+    --color-texto: #555555;        /* Color para el texto del submenú */
+    --transicion: all 0.3s ease;   /* Animaciones suaves */
+    --sombra: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+body {
+    background-color: #b9fdee; 
+    background-image: radial-gradient(#FFD1DC 20%, transparent 20%),
+                      radial-gradient(#FFD1DC 20%, transparent 20%);
+    background-size: 30px 30px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    }
+
+/* Contenedor centrado */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar */
+}
+
+/* --- 2. HEADER Y LOGO --- */
+header {
+    background: var(--blanco); /* Fondo blanco */
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* Sombra ligera */
+    position: sticky; /* Se queda fijo arriba */
+    top: 0;
+    z-index: 1000; /* Siempre encima */
+}
+
+/* Alinea logo y menú */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CONFIGURACIÓN DEL LOGO */
+.logo img {
+    height: 55px; /* Tamaño del logo */
+    width: auto;
+    display: block;
+}
+
+/* --- 3. NAVEGACIÓN Y MENÚ --- */
+.nav-menu {
+    display: flex; /* Menú en fila */
+    list-style: none; /* Quita viñetas */
+    align-items: center;
+}
+
+/* Separación entre opciones */
+.nav-menu > li {
+    margin-left: 25px;
+    position: relative; /* Necesario para submenú */
+}
+
+/* Estilo de enlaces */
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-oscuro);
+    font-weight: 500;
+    padding: 10px 0;
+    transition: var(--transicion);
+    display: block;
+
+    /* Permite alinear iconos con texto */
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px; 
+    text-decoration: none; 
+    color: inherit;
+}
+
+/* Línea animada debajo del menú */
+.nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Empieza invisible */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primario);
+    transition: var(--transicion);
+}
+
+/* Cuando pasas el mouse aparece la línea */
+.nav-menu > li:hover > a::after {
+    width: 100%;
+}
+
+/* Cambio de color al pasar el mouse */
+.nav-menu a:hover {
+    color: var(--color-primario);
+}
+
+/* --- 4. SUBMENÚ DESPLEGABLE --- */
+.dropdown-content {
+    position: absolute;
+    top: 120%; /* Debajo del menú */
+    left: -20px;
+    background: var(--blanco);
+    min-width: 220px;
+    padding: 15px 0;
+    list-style: none;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: var(--sombra);
+
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Baja un poco */
+    transition: var(--transicion);
+}
+
+/* Mostrar el submenú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Estilo de opciones del submenú */
+.dropdown-content li a {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    font-weight: 400;
+}
+
+/* Hover en submenú */
+.dropdown-content li a:hover {
+    background-color: #f8faff;
+    color: var(--color-primario);
+    padding-left: 30px; /* Se mueve a la derecha */
+}
+
+/* Botón Login resaltado */
+.btn-login {
+    background-color: var(--color-primario);
+    color: var(--blanco) !important;
+    padding: 10px 25px !important;
+    border-radius: 50px; /* Forma redonda */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Efecto hover del botón */
+.btn-login:hover {
+    transform: translateY(-2px); /* Se levanta */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* --- 5. RESPONSIVE --- */
+@media (max-width: 850px) {
+
+    /* Header en columna */
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Menú se adapta */
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu li {
+        margin: 5px 15px;
+    }
+
+    /* Submenú en móvil */
+    .dropdown-content {
+        position: static; /* Ya no flotante */
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none; /* Oculto */
+        background: #f1f1f1;
+    }
+
+    /* Mostrar al hacer hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* --- 6. FOOTER 3 COLUMNAS --- */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 60px 0 30px;
+    margin-top: auto; /* Empuja el footer abajo */
+}
+
+/* Grid para dividir en columnas */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Títulos del footer */
+.footer-col h4 {
+    color: var(--color-primario);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Texto del footer */
+.footer-col p, .footer-col li {
+    color: #999;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+/* Quita viñetas */
+.footer-col ul { 
+    list-style: none; 
+}
+
+/* Enlaces del footer */
+.footer-col a {
+    color: #999;
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+/* Hover enlaces */
+.footer-col a:hover {
+    color: var(--blanco);
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 25px;
+    color: #555;
+    font-size: 0.85rem;
+}
+ /* ESTILOS CSS PARA ESTA SECCIÓN (Agrégalos a tu bloque <style>) */
+
+    .seccion-info {
+        padding: 40px 0;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 25px;
+        color: var(--color-oscuro);
+        border-left: 5px solid var(--color-primario);
+        padding-left: 15px;
+    }
+
+    /* Contenedores Flexbox */
+    .contenedor-dos, .contenedor-tres {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; /* Para que sea responsivo */
+        margin-bottom: 50px;
+    }
+
+    /* Estilo base de los cuadros */
+    .cuadro {
+        background: var(--blanco);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .cuadro:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Tamaños específicos */
+    .cuadro-grande {
+        flex: 1 1 calc(50% - 20px); /* 2 cuadros por fila */
+        min-width: 300px;
+    }
+
+    .cuadro-pequeno {
+        flex: 1 1 calc(33.33% - 20px); /* 3 cuadros por fila */
+        min-width: 250px;
+        border-top: 3px solid var(--color-primario);
+        align-items: center;
+    }
+.imagen-placeholder {
+    width: 100%;
+    height: auto;       /* Ya no obligamos a que mida 200px */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.imagen-placeholder img {
+    width: 100%;        /* Ocupa todo el ancho disponible */
+    height: auto;       /* Mantiene su proporción natural */
+    display: block;
+}
+  
+    /* Elementos internos 
+    .imagen-placeholder {
+        background: #eee;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        color: #888;
+    }*/
+
+    .leer-mas {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--color-primario);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    /* Contenedor universal para fotos y videos */
+.media-container {
+    width: 100%;
+    height: 180px;         /* Altura fija para que los 3 cuadros estén parejos */
+    background-color: #1a1a1a; /* Fondo oscuro para resaltar el contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+/* Ajuste para que se vea TODO (Imagen) */
+.media-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;   /* ESTA ES LA CLAVE: No corta nada */
+}
+
+/* Ajuste para que se vea TODO (Video) */
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* ESTA ES LA CLAVE: Muestra el video completo */
+    outline: none;
+}
+/* --- ESTILOS DEL BANNER --- */
+.mainBanner {
+    width: 100%;
+    height: 450px; /* Altura ideal tipo e-commerce */
+    position: relative;
+}
+
+.mainBanner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainBanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste perfecto de la imagen */
+    object-position: center;
+}
+
+/* Capa de contenido sobre la imagen */
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    padding-left: 10%; /* Alineado a la izquierda como ML */
+    background: linear-gradient(to right, rgba(0,0,0,0.4), transparent); /* Degradado para legibilidad */
+}
+
+.text-box {
+    color: white;
+    max-width: 500px;
+}
+
+.text-box span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-primario);
+}
+
+.text-box h1 {
+    font-size: 3rem;
+    margin: 10px 0 20px;
+    line-height: 1.1;
+}
+
+.btn-comprar {
+    padding: 12px 30px;
+    background: var(--color-primario);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .mainBanner { height: 300px; }
+    .text-box h1 { font-size: 1.8rem; }
+    .banner-content { padding-left: 5%; }
+}
+/* --- ESTILOS DEL BANNER --- */
+.mainBanner {
+    width: 100%;
+    height: 450px;
+    position: relative;
+}
+
+/* Hace que todo el slide sea clickable */
+.banner-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainBanner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainBanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease; /* Efecto zoom opcional */
+}
+
+/* Zoom suave al pasar el mouse por el banner */
+.banner-link:hover img {
+    transform: scale(1.05);
+}
+
+/* Capa de contenido: Alineada ABAJO a la IZQUIERDA */
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Mueve el texto al fondo */
+    justify-content: flex-start; /* Mueve el texto a la izquierda */
+    padding: 40px 5%; /* Espacio desde los bordes */
+    /* Degradado oscuro desde abajo para que el texto blanco se lea perfecto */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%);
+    box-sizing: border-box;
+}
+
+.text-box {
+    color: white;
+    max-width: 80%;
+}
+
+.text-box h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    /* Sombra de apoyo */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .mainBanner { height: 300px; }
+    .text-box h1 { font-size: 1.5rem; }
+    .banner-content { padding: 20px 5%; }
+}
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+}
+html {
+    scroll-behavior: smooth; /* Hace que el movimiento sea fluido y no de golpe */
+}
+
+/* Aplica esto a tus secciones para que el menú fijo no tape el contenido */
+section {
+    scroll-margin-top: 90px; /* Ajusta este número según la altura real de tu header */
+}
