@@ -27,7 +27,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/prefeco.png" alt="Bunnies Bakery Logo">
+                    <img src="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" alt="Bunnies Bakery Logo">
                 </a>
             </div>
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="cuadro cuadro-grande">
                     <div class="media-container" style="height: 350px;">
-                        <img src="img/nuestro-taller.jpg" alt="Taller de Bunnies Bakery" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                        <img src="banner/BANNER MARLENN 1.png" alt="Taller de Bunnies Bakery" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     <div class="media-container" style="border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto;">
                         <img src="img/equipo-vico.jpg" alt="Chef Vico" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <h4 style="text-align: center;">Vico Espejel</h4>
+                    <h4 style="text-align: center;">Victor Hugo Segura Orta</h4>
                     <p style="text-align: center; color: #00c2cb; font-weight: 600; font-size: 0.9rem;">Maestro Repostero & Fundador</p>
                 </div>
 
@@ -126,7 +126,7 @@
                     <div class="media-container" style="border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto;">
                         <img src="img/equipo-camila.jpg" alt="Chef Camila" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <h4 style="text-align: center;">Camila Torres</h4>
+                    <h4 style="text-align: center;">Camila Betanzos Espinosa</h4>
                     <p style="text-align: center; color: #00c2cb; font-weight: 600; font-size: 0.9rem;">Diseñadora de Coberturas</p>
                 </div>
 
@@ -134,8 +134,23 @@
                     <div class="media-container" style="border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto;">
                         <img src="img/equipo-marlenn.jpg" alt="Chef Marlenn" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <h4 style="text-align: center;">Marlenn Cruz</h4>
+                    <h4 style="text-align: center;">Marlenn Guadalupe Gillen</h4>
                     <p style="text-align: center; color: #00c2cb; font-weight: 600; font-size: 0.9rem;">Especialista en Modelado 3D</p>
+                </div>
+                                <div class="cuadro cuadro-pequeno">
+                    <div class="media-container" style="border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto;">
+                        <img src="img/equipo-vico.jpg" alt="Chef Vico" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="text-align: center;">Victor Ariel Espejel Ramirez</h4>
+                    <p style="text-align: center; color: #00c2cb; font-weight: 600; font-size: 0.9rem;">Maestro Repostero & Fundador</p>
+                </div>
+
+                <div class="cuadro cuadro-pequeno">
+                    <div class="media-container" style="border-radius: 50%; width: 150px; height: 150px; margin: 0 auto 15px auto;">
+                        <img src="img/equipo-camila.jpg" alt="Chef Camila" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="text-align: center;">Jessica Joselyn Ulloa Campos</h4>
+                    <p style="text-align: center; color: #00c2cb; font-weight: 600; font-size: 0.9rem;">Diseñadora de Coberturas</p>
                 </div>
 
             </div>
@@ -146,27 +161,42 @@
             <h3 style="color: #333; font-size: 1.8rem; margin-bottom: 10px;">¿Quieres conocernos en persona? 🥐</h3>
             <p style="color: #666; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">Visítanos en nuestra sucursal y descubre por qué la vida es mejor con un toque de azúcar.</p>
             <a href="https://wa.me/5210000000000?text=Hola,%20me%20gustaría%20saber%20más%20sobre Sus productos." target="_blank" style="background-color: #00c2cb; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s;">
-                Ponete en Contacto
+                Ponte en Contacto
             </a>
         </div>
         
     </main>
+<script>
+let visitas = localStorage.getItem("visitas");
 
+if(visitas == null){
+    visitas = 0;
+}
+
+visitas++;
+
+localStorage.setItem("visitas", visitas);
+
+document.write("Visitas: " + visitas);
+</script>
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
+                 <div class="footer-col">
                     <h4>Contacto</h4>
-                    <p>📍 Av. de los Emprendedores 404</p>
+                    <p>📍 Blvd. Manuel Antonio Romero Zurita, Quintin Arauz, 86608 Paraíso, Tab.</p>
                     <p>📞 +52 993 123 4567</p>
                     <p>✉️ hola@tupagina.com</p>
+    <a href="https://wa.me/5210000000000?text=Hola,%20me%20gustaría%20recibir%20información%20sobre%20sus%20productos%20o%20servicios." class="btn-whatsapp" target="_blank">
+    Enviar mensaje por WhatsApp
+</a>                    
                 </div>
                 <div class="footer-col">
                     <h4>Ubicación</h4>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2081.1710682395706!2d-93.21986912402592!3d18.391844035815073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ee8cd7cc8ce477%3A0xe16984e99de48f21!2sPreparatoria%20Augusto%20Hern%C3%A1ndez%20Oliv%C3%A9!5e1!3m2!1ses-419!2smx!4v1779323885756!5m2!1ses-419!2smx" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p>Ciudad del Carmen, Campeche</p>
-                    <p>México, CP 24100</p>
-                    <a href="https://maps.app.goo.gl/wK4bJg4R63XmZ9S49" target="_blank">Ver en Google Maps</a>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2081.1710682395706!2d-93.21986912402592!3d18.391844035815073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ee8cd7cc8ce477%3A0xe16984e99de48f21!2sPreparatoria%20Augusto%20Hern%C3%A1ndez%20Oliv%C3%A9!5e1!3m2!1ses-419!2smx!4v1779323885756!5m2!1ses-419!2smx" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>Villahermosa, Tabasco</p>
+                    <p>México, CP 86000</p>
+                    <a href="#">Ver en Google Maps</a>
                 </div>
                 <div class="footer-col">
                     <h4>Enlaces Rápidos</h4>
@@ -175,10 +205,17 @@
                         <li><a href="#">Aviso de Privacidad</a></li>
                         <li><a href="#">Soporte al Cliente</a></li>
                     </ul>
+                                   <div class="footer-col">
+                    <h4>Redes Sociales</h4>
+                    <ul>
+                                            <li><a href="https://www.instagram.com/bunnies__bakery?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fi fi-brands-instagram"></i>@Bunnies_Bakery</a></li>
+<li><a href="https://youtu.be/ZyW66f4XIy8?si=Dn3nw-MvYvYW6rIR">YouTube</a></li>
+                    </ul>
+                </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 Bunnies Bakery. Todos los derechos reservados.
+                &copy; 2026 Nombre del alumno. Grado y grupo. Todos los derechos reservados.
             </div>
         </div>
     </footer>
