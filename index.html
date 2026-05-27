@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCE1CV7KB9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZCE1CV7KB9');
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +37,13 @@
                     <li><a href="index.html"><i class="fi fi-sr-home"></i>Inicio</a></li>
                     
                     <li class="dropdown">
-                        <a href="#Nosotros"></i><i class="fi fi-sr-cupcake"></i></i>Nosotros</a>
+                        <a href="nosotros.html"></i><i class="fi fi-sr-cupcake"></i></i>Nosotros</a>
 
                     </li>
                    
 
-                    <li><a href="#Servicios"><i class="fi fi-sr-croissant"></i>Servicios o Productos</a></li>
-                    <li><a href="#Contacto"><i class="fi fi-sr-phone-call"></i>Contacto</a></li>
+                    <li><a href="servicios.html"><i class="fi fi-sr-croissant"></i>Servicios o Productos</a></li>
+                    <li><a href="contactos.html"><i class="fi fi-sr-phone-call"></i>Contacto</a></li>
                     <li><a href="login.html" class="btn-login">Login</a></li>
                 </ul>
             </nav>
@@ -176,10 +185,9 @@
                     <p>Aprende a decorar de forma divertida. Próximo inicio: 15 de Junio.</p>
                 </div>
                 <div class="cuadro cuadro-pequeno">
-                    <div class="media-container">
-                        <video controls style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="video/proceso_horneado.mp4" type="video/mp4">
-                            Tu navegador no soporta videos.
+                  <div class="media-container">
+                        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="video/Repostería_preparando_donas_glac…_202605260804.mp4" type="video/mp4">
                         </video>
                     </div>
                     <h4>Detrás del Horno</h4>
@@ -205,6 +213,19 @@
         </div>
         
     </main>
+<script>
+let visitas = localStorage.getItem("visitas");
+
+if(visitas == null){
+    visitas = 0;
+}
+
+visitas++;
+
+localStorage.setItem("visitas", visitas);
+
+document.write("Visitas: " + visitas);
+</script>
 
     <footer>
         <div class="container">
