@@ -22,7 +22,219 @@
     <link rel="shortcut icon" href="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" type="image/x-icon">
 </head>
 <body>
- 
+ <style>
+        /* Estilos únicos para la página de servicios que puedes agregar aquí o en tu estilos.css */
+        .precio-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #00c2cb;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cuadro-producto {
+            position: relative; /* Necesario para que la etiqueta de precio flote dentro de la tarjeta */
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #ffe4e8;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .cuadro-producto:hover {
+            transform: translateY(-5px);
+            border-color: #00c2cb;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #ffb6c1;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #ff91a4;
+        }
+
+        .paquete-card {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #d4fff4;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .paquete-img {
+            width: 40%;
+            height: 100%;
+            min-height: 250px;
+            object-fit: cover;
+        }
+
+        .paquete-info {
+            width: 60%;
+            padding: 30px;
+        }
+
+        /* Responsive para los paquetes en celular */
+        @media (max-width: 768px) {
+            .paquete-card {
+                flex-direction: column;
+            }
+            .paquete-img {
+                width: 100%;
+                height: 200px;
+            }
+            .paquete-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" alt="Bunnies Bakery Logo">
+                </a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fi fi-sr-home"></i>Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="nosotros.html"><i class="fi fi-sr-cupcake"></i>Nosotros</a>
+                    </li>
+                    <li><a href="servicios.html" class="active"><i class="fi fi-sr-croissant"></i>Servicios o Productos</a></li>
+                    <li><a href="contactos.html"><i class="fi fi-sr-phone-call"></i>Contacto</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div style="background: linear-gradient(135deg, #d4fff4 0%, #ffe4e8 100%); padding: 80px 20px; text-align: center; box-shadow: inset 0 -5px 15px rgba(0,0,0,0.02);">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; color: #333; margin-bottom: 10px; font-weight: 600;">Nuestro Menú Mágico</h1>
+            <p style="font-size: 1.3rem; color: #666; max-width: 600px; margin: 0 auto;">Explora nuestras creaciones de vitrina, ediciones limitadas y los servicios especiales para tus eventos.</p>
+        </div>
+    </div>
+
+    <main class="container" style="padding: 60px 0;">
+        
+        <section class="seccion-info">
+            <h2 class="titulo-seccion" style="text-align: center;">Postres Temáticos 🧁</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Las estrellas de la casa, horneadas frescas todos los días.</p>
+            
+            <div class="contenedor-tres" style="margin-bottom: 60px;">
+                
+                <div class="cuadro cuadro-producto">
+                    <div class="precio-tag">$45 MXN</div>
+                    <div class="media-container" style="border-radius: 15px; margin-bottom: 15px;">
+                        <img src="img/dona-chiikawa.jpg" alt="Dona Chiikawa" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Dona Chiikawa</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Suave dona cubierta de chocolate blanco con carita decorada a mano. ¡Súper tierna!</p>
+                    <a href="#" class="btn-comprar">Añadir al carrito</a>
+                </div>
+
+                <div class="cuadro cuadro-producto">
+                    <div class="precio-tag">$55 MXN</div>
+                    <div class="media-container" style="border-radius: 15px; margin-bottom: 15px;">
+                        <img src="img/cupcake-potter.jpg" alt="Cupcake Sombrero Seleccionador" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Cupcake Hogwarts</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Pan de red velvet con relleno sorpresa. ¡Descubre a qué casa perteneces!</p>
+                    <a href="#" class="btn-comprar">Añadir al carrito</a>
+                </div>
+
+                <div class="cuadro cuadro-producto">
+                    <div class="precio-tag">$40 MXN</div>
+                    <div class="media-container" style="border-radius: 15px; margin-bottom: 15px;">
+                        <img src="img/galleta-marvel.jpg" alt="Galleta Escudo Cap" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Galleta Vengadores</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Galleta de mantequilla decorada con royal icing inspirado en los héroes de Marvel.</p>
+                    <a href="#" class="btn-comprar">Añadir al carrito</a>
+                </div>
+
+            </div>
+
+            <h2 class="titulo-seccion" style="text-align: center; margin-top: 60px;">Paquetes y Combos 🎁</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">La mejor opción para compartir la dulzura.</p>
+
+            <div class="contenedor-dos" style="margin-bottom: 60px; gap: 30px;">
+                
+                <div class="paquete-card">
+                    <img src="img/combo-pareja.jpg" alt="Combo Pareja" class="paquete-img">
+                    <div class="paquete-info">
+                        <h3 style="color: #333; margin-bottom: 10px;">Combo Sweet Date</h3>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Ideal para compartir. Incluye 2 bebidas a elegir (café o frappé) y 2 rebanadas de pastel del día.</p>
+                        <h4 style="color: #00c2cb; font-size: 1.5rem; margin-bottom: 15px;">$180 MXN</h4>
+                        <a href="#" class="btn-comprar" style="background-color: #00c2cb;">Pedir Combo</a>
+                    </div>
+                </div>
+
+                <div class="paquete-card">
+                    <img src="img/caja-docena.jpg" alt="Caja Docena Donas" class="paquete-img">
+                    <div class="paquete-info">
+                        <h3 style="color: #333; margin-bottom: 10px;">Caja Bunnies (12 pz)</h3>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Arma tu caja con 12 donas o cupcakes surtidos. ¡Lleva más y paga menos!</p>
+                        <h4 style="color: #00c2cb; font-size: 1.5rem; margin-bottom: 15px;">$450 MXN</h4>
+                        <a href="#" class="btn-comprar" style="background-color: #00c2cb;">Armar Caja</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2 class="titulo-seccion" style="text-align: center; margin-top: 60px;">Servicios Especiales 🎉</h2>
+            <div class="contenedor-tres" style="margin-bottom: 40px;">
+                
+                <div class="cuadro cuadro-pequeno" style="border-top: 4px solid #ffb6c1;">
+                    <div style="font-size: 2.5rem; text-align: center; margin-bottom: 15px;">🎂</div>
+                    <h4 style="text-align: center;">Pasteles de Diseño</h4>
+                    <p style="color: #666; font-size: 0.95rem; text-align: center;">Dinos tu idea y nosotros la horneamos. Modelado en fondant, buttercream y decoraciones 3D. <strong>Cotización previa.</strong></p>
+                </div>
+
+                <div class="cuadro cuadro-pequeno" style="border-top: 4px solid #00c2cb;">
+                    <div style="font-size: 2.5rem; text-align: center; margin-bottom: 15px;">🍭</div>
+                    <h4 style="text-align: center;">Mesas de Dulces</h4>
+                    <p style="color: #666; font-size: 0.95rem; text-align: center;">Montaje profesional para bodas, XV años o graduaciones. Incluye estructura, iluminación y postres. <strong>Desde $3,500 MXN.</strong></p>
+                </div>
+
+                <div class="cuadro cuadro-pequeno" style="border-top: 4px solid #ffe4e8;">
+                    <div style="font-size: 2.5rem; text-align: center; margin-bottom: 15px;">👩‍🍳</div>
+                    <h4 style="text-align: center;">Cursos y Talleres</h4>
+                    <p style="color: #666; font-size: 0.95rem; text-align: center;">Clases presenciales los fines de semana para aprender a decorar cupcakes y galletas. <strong>$350 MXN por clase.</strong></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+    
     
        <footer>
         <div class="container">
