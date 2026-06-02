@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCE1CV7KB9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZCE1CV7KB9');
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Bunnies Bakery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bunnies Bakery</title>
@@ -21,8 +15,400 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="shortcut icon" href="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" type="image/x-icon">
 </head>
+    <style>
+        /* ESTILOS GLOBALES (Mismos de tu diseño) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffafb; /* Fondo rosa ultra claro */
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* NAVEGACIÓN */
+        header {
+            background-color: #ff91a4; /* Rosa característico */
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffe4e8;
+        }
+
+        /* SECCIÓN HERO DE CONTACTO */
+        .hero-contacto {
+            background: linear-gradient(rgba(255, 145, 164, 0.8), rgba(255, 145, 164, 0.8)), url('https://images.unsplash.com/photo-1557308536-ee471ef2c390?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .hero-contacto h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-contacto p {
+            font-size: 1.2rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* CONTENEDOR PRINCIPAL DIVIDIDO */
+        .contacto-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* TARJETA DE INFORMACIÓN */
+        .info-card {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 145, 164, 0.1);
+            border-top: 6px solid #00c2cb; /* Azul cyan que usas */
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-icono {
+            background: #ffe4e8;
+            color: #ff91a4;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-texto h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .info-texto p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* TARJETA DEL FORMULARIO */
+        .form-card {
+            flex: 1.5;
+            min-width: 300px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 145, 164, 0.1);
+            border-top: 6px solid #ff91a4;
+        }
+
+        .form-card h2 {
+            margin-top: 0;
+            color: #ff91a4;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ffe4e8;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #333;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #ff91a4;
+            box-shadow: 0 0 8px rgba(255, 145, 164, 0.3);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* BOTÓN REUTILIZADO */
+        .btn-comprar {
+            display: inline-block;
+            background-color: #ff91a4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #e07a8c;
+            transform: translateY(-2px);
+        }
+
+        /* MODAL DE ÉXITO (Oculto por defecto) */
+        #modal-exito {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-icono {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
 <body>
-    
+
+    <!-- CABECERA -->
+   <header>
+        <div class="container">
+            <div class="logo">
+                <!-- COLOCA TU LOGO AQUÍ -->
+                <a href="index.html">
+                    <img src="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg"  alt="Coloca tu logo aquí">
+                </a>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fi fi-sr-home"></i>Inicio</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="nosotros.html"></i><i class="fi fi-sr-cupcake"></i></i>Nosotros</a>
+
+                    </li>
+                   
+
+                    <li><a href="servicios.html"><i class="fi fi-sr-croissant"></i>Servicios o Productos</a></li>
+                    <li><a href="contactos.html"><i class="fi fi-sr-phone-call"></i>Contacto</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero-contacto">
+        <div class="container">
+            <h1>¡Hablemos de cosas dulces! 💌</h1>
+            <p>¿Tienes un pedido especial, un evento o solo quieres saludarnos? Escríbenos.</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+        <div class="contacto-grid">
+            
+            <!-- INFORMACIÓN DE CONTACTO -->
+            <div class="info-card">
+                <div class="info-item">
+                    <div class="info-icono">📍</div>
+                    <div class="info-texto">
+                        <h3>Encuéntranos</h3>
+                        <p>Av. Principal #456, Colonia Centro<br>Paraíso, Tabasco.</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icono">📞</div>
+                    <div class="info-texto">
+                        <h3>Llámanos</h3>
+                        <p>+52 933 123 4567<br>Pedidos por WhatsApp disponibles.</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icono">✉️</div>
+                    <div class="info-texto">
+                        <h3>Escríbenos</h3>
+                        <p>hola@bunniesbakery.com<br>eventos@bunniesbakery.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icono">🕒</div>
+                    <div class="info-texto">
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Sábado: 9:00 AM - 8:00 PM<br>Domingos: Cerrado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE CONTACTO -->
+            <div class="form-card">
+                <h2>Envíanos un mensaje 🧁</h2>
+                <form id="formulario-contacto" onsubmit="enviarMensaje(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" class="form-input" placeholder="Ej. María Pérez" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" class="form-input" placeholder="tu@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" class="form-input" required>
+                            <option value="" disabled selected>Selecciona un tema...</option>
+                            <option value="pedido">Pedido especial</option>
+                            <option value="evento">Cotización para evento</option>
+                            <option value="duda">Duda sobre menú</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" class="form-input" placeholder="Cuéntanos los detalles de tu idea o pedido..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-comprar">Enviar Mensaje ✨</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- VENTANA EMERGENTE (MODAL) DE ÉXITO -->
+    <div id="modal-exito">
+        <div class="modal-content" id="modal-caja">
+            <div class="modal-icono">🐰🎉</div>
+            <h2 style="color: #00c2cb; margin-top: 0;">¡Mensaje Enviado!</h2>
+            <p style="color: #666; margin-bottom: 25px;">Hemos recibido tu mensaje correctamente. Nuestro equipo revisará los detalles y te responderemos lo más pronto posible.</p>
+            <button onclick="cerrarModal()" class="btn-comprar" style="width: auto; padding: 10px 30px;">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE LA FUNCIÓN ESPECIAL -->
+    <script>
+        function enviarMensaje(event) {
+            // Evita que la página se recargue al presionar enviar
+            event.preventDefault();
+
+            // Muestra la ventana emergente bonita
+            const modal = document.getElementById('modal-exito');
+            const caja = document.getElementById('modal-caja');
+            
+            modal.style.opacity = '1';
+            modal.style.pointerEvents = 'auto';
+            caja.style.transform = 'translateY(0)';
+
+            // Limpia el formulario automáticamente para que quede como nuevo
+            document.getElementById('formulario-contacto').reset();
+        }
+
+        function cerrarModal() {
+            // Oculta la ventana emergente
+            const modal = document.getElementById('modal-exito');
+            const caja = document.getElementById('modal-caja');
+            
+            modal.style.opacity = '0';
+            modal.style.pointerEvents = 'none';
+            caja.style.transform = 'translateY(-20px)';
+        }
+    </script>
 
        <footer>
         <div class="container">
