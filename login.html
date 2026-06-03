@@ -6,7 +6,7 @@
     <title>Login y Registro - Bunnies Bakery</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="Img/WhatsApp Image 2026-05-26 at 7.17.47 AM.jpeg" type="image/x-icon">
-   <style>
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -67,6 +67,29 @@
         
         /* Ocultar elementos */
         .hidden { display: none; }
+
+        /* --- NUEVOS ESTILOS PARA EL MODAL DE RECUPERACIÓN --- */
+        #modal-recuperar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+
+        #caja-recuperar {
+            background: white; padding: 40px; border-radius: 20px; text-align: center;
+            max-width: 400px; width: 90%; transform: translateY(-20px);
+            transition: transform 0.3s ease; box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        #caja-recuperar h2 { color: #ff91a4; font-size: 22px; margin-bottom: 10px; }
+        #caja-recuperar p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        
+        .btn-cancelar {
+            background-color: transparent; color: #666; border: 2px solid #ddd; padding: 12px;
+            border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer;
+            font-family: 'Poppins', sans-serif; transition: 0.3s; margin-top: 10px; width: 100%;
+        }
+        .btn-cancelar:hover { background-color: #f5f5f5; }
     </style>
 </head>
 <body>
@@ -86,7 +109,9 @@
                     <label for="login-password">Contraseña</label>
                     <input type="password" id="login-password" name="password" placeholder="********" required>
 
-                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <!-- AQUÍ SE AGREGÓ EL ONCLICK PARA ABRIR EL MODAL -->
+                    <a href="#" class="forgot-password" onclick="abrirModalRecuperar(event)">¿Olvidaste tu contraseña?</a>
+                    
                     <button type="submit" class="btn-submit">Iniciar Sesión</button>
                 </form>
                 <div class="toggle-form">
@@ -120,10 +145,52 @@
         <div class="side-banner"><img src="banner/BANNER VICO 1.jpg" alt="Banner"></div>
     </div>
 
+    <!-- --- ESTRUCTURA DEL MODAL DE RECUPERACIÓN --- -->
+    <div id="modal-recuperar">
+        <div id="caja-recuperar">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🔐</div>
+            <h2>Recuperar Contraseña</h2>
+            <p>Ingresa el correo electrónico asociado a tu cuenta y te enviaremos un enlace para restablecerla.</p>
+            
+            <form onsubmit="enviarRecuperacion(event)" style="display: flex; flex-direction: column;">
+                <input type="email" placeholder="tu@correo.com" required style="margin-bottom: 20px;">
+                <button type="submit" class="btn-submit">Enviar Enlace</button>
+                <button type="button" onclick="cerrarModalRecuperar()" class="btn-cancelar">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
     <script>
+        // Función original para alternar entre Login y Registro
         function cambiarFormulario() {
             document.getElementById('login-box').classList.toggle('hidden');
             document.getElementById('register-box').classList.toggle('hidden');
+        }
+
+        // --- NUEVAS FUNCIONES PARA EL MODAL ---
+        function abrirModalRecuperar(event) {
+            event.preventDefault(); // Evita que la página salte hacia arriba
+            const modal = document.getElementById('modal-recuperar');
+            const caja = document.getElementById('caja-recuperar');
+            
+            modal.style.opacity = '1';
+            modal.style.pointerEvents = 'auto';
+            caja.style.transform = 'translateY(0)';
+        }
+
+        function cerrarModalRecuperar() {
+            const modal = document.getElementById('modal-recuperar');
+            const caja = document.getElementById('caja-recuperar');
+            
+            modal.style.opacity = '0';
+            modal.style.pointerEvents = 'none';
+            caja.style.transform = 'translateY(-20px)';
+        }
+
+        function enviarRecuperacion(event) {
+            event.preventDefault(); // Evita que se recargue la página al enviar
+            alert("¡Enlace enviado! Revisa tu bandeja de entrada.");
+            cerrarModalRecuperar();
         }
     </script>
 </body>
